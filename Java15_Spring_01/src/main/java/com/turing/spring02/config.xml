@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Spring的核心容器
+beans：管理所有的javabean
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 第一台针式打印机 -->
+	<bean id="pinPrinter" class="com.turing.spring02.PinPrinter"></bean>
+	
+	<!-- 第二台针式打印机 -->
+	<bean id="pinPrinter2" class="com.turing.spring02.PinPrinter"></bean>
+	
+	<!-- 激光打印机 -->
+	<bean id="laserPrinter" class="com.turing.spring02.LaserPrinter"></bean>
+	
+	<!-- 图文店 -->
+	<!-- IOC：控制反转 -->
+	<bean id="printHouse" class="com.turing.spring02.PrintHouse">
+		<!-- DI:依赖注入:给属性赋值 --> 
+		<property name="printer" ref="laserPrinter"></property>
+	</bean>
+	
+	
+	<!-- 图文店2 -->
+	<!-- IOC：控制反转 -->
+	<bean id="printHouse2" class="com.turing.spring02.PrintHouse2">
+		<!-- DI:依赖注入:给属性赋值 --> 
+		<constructor-arg name="printer" ref="pinPrinter2"></constructor-arg>
+	</bean>
+	
+	
+</beans>
