@@ -4,5 +4,10 @@ ccc
 111111
 222222222222
 3333333333
+<<<<<<< HEAD
 Mr Liu is vary good
 hehehehehe
+=======
+GitHub is Comming
+hahaha
+>>>>>>> 68d389530aebe40c9d70d0c7b0890c189cd86df8
